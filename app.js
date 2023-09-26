@@ -1,4 +1,6 @@
 const express = require("express");
+// import cors from "cors"; 
+const cors = require("cors")
 const nodemailer = require("nodemailer");
 const sgMail = require("@sendgrid/mail");
 const app = express();
@@ -7,6 +9,7 @@ const port = process.env.PORT || 3000;
 // Подключение библиотеки dotenv для загрузки переменных окружения из файла .env
 require("dotenv").config();
 
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
