@@ -15,6 +15,7 @@ app.use(express.urlencoded({ extended: false }));
 
 app.post("/submit-form", (req, res) => {
   const { name, phone } = req.body;
+  console.log('name - ', name, "   ", "phone - ", phone)
 
   const { SENDGRID_API_KEY } = process.env;
 
